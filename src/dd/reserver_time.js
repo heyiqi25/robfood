@@ -6,7 +6,7 @@ module.exports = (products, address) => new Promise((r, p) => {
         url: 'https://maicai.api.ddxq.mobi/order/getMultiReserveTime',
         method: 'POST',
         headers: getHeaders({ 'content-type': 'application/x-www-form-urlencoded', }),
-        body: objectToQueryString(getData({ products: JSON.stringify(products), station_id: address.station_id }))
+        body: objectToQueryString(getData({ products: JSON.stringify([products]), station_id: address.station_id }))
     };
 
     request(options, function callback(error, response, body) {
