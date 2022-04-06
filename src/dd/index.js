@@ -73,7 +73,7 @@ async function main() {
         get_cart:
         for (b = 0; b < 10; b++) {
             const cartInfo = await retry(100, async () => {
-                return await cart({ "ddmc-station-id": selectAddress.station_id }, { station_id: selectAddress.station_id })
+                return await cart({ "ddmc-station-id": selectAddress.station_id }, { station_id: selectAddress.station_id, is_load: 1 })
             })
 
             if (!cartInfo) {
